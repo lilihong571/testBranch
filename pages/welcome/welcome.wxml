@@ -1,0 +1,7 @@
+<!--pages/welcome/welcome.wxml-->
+<view>
+  <text class="textContent">这是一个测试用例</text>
+  <button bindtap="add">add</button>
+  <button bindtap="remove">remove</button>
+  <text>{{text}}</text>
+</view>

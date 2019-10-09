@@ -1,0 +1,10 @@
+Page({
+  data:{
+    inputValue:''
+  },
+  keyChangeInput:function(e){
+    this.setData({
+      inputValue:e.detail.value
+    })
+  }
+})

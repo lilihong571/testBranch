@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/inputtest/inputtest",
+    "pages/input/input",
+    "pages/btn/btn",
+    "pages/welcome/welcome",
+    "pages/radio/radio",
+    "pages/swiper/swiper",
+    "pages/text/text"
+  ]
+}
