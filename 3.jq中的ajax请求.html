@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    window.onload = function(){
+        $.ajax({
+            url:"https://restapi.amap.com/v3/geocode/geo",
+            dataType:"json",
+            type:"get",
+            async:"true",
+            data:{
+                address:str,
+                key:"7486e10d3ca83a934438176cf941df0c",
+            },
+            success:function(data){
+                alert(data.geocodes[0].formatted_address+"经纬度："+data.geocodes[0].location);
+                console.log(data);//在console中查看数据
+                
+            }
+        });
+    };
+</script>
+<body>
+    
+</body>
+</html>

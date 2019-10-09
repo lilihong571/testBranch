@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    window.onload = function(){
+        //1.创建异步对象
+        var xhr = new XMLHttpRequest();
+        //2.设置请求行 open（请求方式，请求url）
+        //get请求如果有参数就需要在Url后面拼接参数
+        //post如果有参数，就在请求体中传递xhr.open("get","validate.php?username="+name)
+        xhr.open("post","validate.php");
+        //3.设置请求头（GET方式忽略此步骤）：setRequestHeader()
+        //get不需要设置
+        //post需要设置请求头：Content-Type:application/x-www-form-urlencoded
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        //4.设置请求体send()
+        //get的参数在url拼接了，所以不需要在这个函数中设置
+        //post的参数在这个函数中设置（如有参数）
+        xhr.send("username="+name);
+        //5.让异步对象接收服务器的响应数据
+        //一个成功的响应有两个条件：1.服务器成功响应了2.异步对象的响应状态为4（数据解析完毕可以使用了）
+        xhr.onreadystatechange = function(){
+            if(xhr.status == 200 && xhr.readyState == 4){
+                console.log(xhr.responseText);
+            }
+        };
+    };
+</script>
+<body>
+    
+</body>
+</html>
